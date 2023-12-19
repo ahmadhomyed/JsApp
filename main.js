@@ -136,7 +136,7 @@ function logout() {
 }
 function registerBtnClicked() {
     const baseUrl = "https://tarmeezacademy.com/api/v1/";
-    const username = document.getElementById("register-username").value;
+    const username = document.getElementById("recipient-username").value;
     const name = document.getElementById("register-name").value;
     const password = document.getElementById("registerPassword").value;
     const avatar = document.getElementById("avatar").files[0];
@@ -157,7 +157,7 @@ function registerBtnClicked() {
             localStorage.setItem("user", JSON.stringify(response.data.user));
             document.querySelector(".btn-close").click();
             alertTrigger("successfully registered");
-
+            document.getElementById("btn-close2").click();
             loginSet();
         })
         .catch((error) => {
